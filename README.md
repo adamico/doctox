@@ -1,24 +1,12 @@
-# README
+# DocTOX
+## Gestion documentaire en toxicologie
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Cette application a été conçue initialement pour la gestion de la documentation toxicologique pour la réponse téléphonique d’urgence (RTU) au Centre Antipoison de Lyon.
 
-Things you may want to cover:
+* Ruby version 2.3.0
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
+* Database POSTGRESQL
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+- Searchkick : https://github.com/ankane/searchkick
