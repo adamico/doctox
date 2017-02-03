@@ -1,0 +1,10 @@
+%h3
+  Résultats de la recherche pour le terme :
+  %em= @query.to_s
+
+- if @search.empty?
+  %p
+    Désolé, je n'ai rien trouvé.
+    %br
+    Pour me faire pardonner, je vous propose de
+    = link_to "Créer : #{@query}", new_product_path(name: @query)

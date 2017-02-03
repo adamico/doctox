@@ -1,1 +1,2 @@
-$('#js-search-results').html('<h3>Résultats de la recherche pour le terme : <em><%= @query.to_s %></em></h3>');
+history.pushState('data', '', 'searches/<%= @query.to_s %>');
+$('#js-search-results').html('<%= j(render('search_results')) %>');
