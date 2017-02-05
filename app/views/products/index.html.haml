@@ -1,4 +1,6 @@
-%h1 Liste Produits
+%h1 Produits
+
+%h2 Les #{Product::RECENT_NUMBER} derniers produits
 
 - if @products.any?
   %table
@@ -6,15 +8,11 @@
       %tr
         %th Nom
     %tbody
-      - @products.each do |product|
+      - @products.recent.each do |product|
         %tr
           %td= product.name
 - else
   %em ♪ Non, rien de rien... ♪
 
 %h2 Créer un nouveau produit
-= form_for @new_product, role: 'form' do |f|
-  %p
-    = f.label :name, 'Libéllé :'
-    = f.text_field :name
-  %p= f.submit
+= render 'form', product: Product.new(name: params[:name])

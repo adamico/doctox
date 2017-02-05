@@ -1,16 +1,3 @@
 %h1 Créer un nouveau produit
 
-= form_for @product, role: 'form' do |f|
-  - if @product.errors.any?
-    #error_explanation
-      %h3
-        = pluralize(@product.errors.count, 'erreur', plural: 'erreurs')
-        empêche#{@product.errors.many? ? 'nt' : ''}
-        la sauvegarde du produit :
-        %ul
-          - @product.errors.full_messages.each do |msg|
-            %li= msg
-
-  %p
-    = f.text_field :name, placeholder: t('attributes.name')
-  %p= f.submit
+= render 'form', product: @product
