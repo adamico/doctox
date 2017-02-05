@@ -1,1 +1,8 @@
 %h1= @product.name
+
+%p= simple_format @product.description
+
+%p
+  = link_to 'Modifier', edit_product_path(@product)
+  |
+  = link_to 'Liste', products_path

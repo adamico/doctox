@@ -1,22 +1,26 @@
 %h1 Produits
 
-%h2 Les #{Product::RECENT_NUMBER} derniers produits
-
 - if @products.any?
-  %table
-    %thead
-      %tr
-        %th Nom
-        %th Description
-        %th
-          %small Actions
-    %tbody
-      - @products.recent.each do |product|
+  %section
+    %h2 Les #{Product::RECENT_NUMBER} produits récemment mis à jour
+
+    %table
+      %thead
         %tr
-          %td= product.name
-          %td= simple_format(product.description)
-          %td
-            %small= link_to 'Modifier', edit_product_path(product)
+          %th Nom
+          %th Description
+          %th
+            %small Actions
+      %tbody
+        - @products.recent.each do |product|
+          %tr
+            %td= product.name
+            %td= simple_format(product.description)
+            %td
+              %small= link_to 'Modifier', edit_product_path(product)
+
+  -#%section
+    %h2 Les produits le plus fréquemment recherchés
 
 - else
   %em ♪ Non, rien de rien... ♪
