@@ -1,5 +1,10 @@
 fr:
-  models:
-    product: produit
+  models: &models
+    product: Produit
   attributes:
     name: libéllé
+    description: description
+  activerecord:
+    models:
+      <<: *models
+

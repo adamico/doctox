@@ -183,6 +183,9 @@ fr:
       create: 'Créer un(e) %{model}'
       update: 'Modifier ce(tte) %{model}'
       submit: 'Enregistrer ce(tte) %{model}'
+      product:
+        create: 'Créer ce %{model}'
+        update: 'Modifier ce %{model}'
 
   attributes:
     created_at: 'Créé le'

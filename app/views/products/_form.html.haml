@@ -10,4 +10,5 @@
             %li= msg
 
   %p= f.text_field :name, placeholder: t('attributes.name')
+  %p= f.text_area :description, placeholder: t('attributes.description'), rows: 4, cols: 80
   %p= f.submit

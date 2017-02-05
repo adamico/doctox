@@ -7,10 +7,12 @@
     %thead
       %tr
         %th Nom
+        %th Description
     %tbody
       - @products.recent.each do |product|
         %tr
           %td= product.name
+          %td= simple_format(product.description)
 - else
   %em ♪ Non, rien de rien... ♪
 
