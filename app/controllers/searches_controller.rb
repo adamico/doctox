@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   def index
     @query = params[:query]
-    @search = []
+    @search = Product.search @query
   end
 end

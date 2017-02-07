@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'thor', '0.19.1' # see https://github.com/rails/rails/issues/27229
 
 gem 'haml-rails', '~> 0.7.0'
+gem 'searchkick'

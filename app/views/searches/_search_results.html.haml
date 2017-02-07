@@ -8,3 +8,6 @@
     %br
     Pour me faire pardonner, je vous propose de
     = link_to "Créer : #{@query}", new_product_path(name: @query)
+- else
+  - @search.each do |item|
+    = link_to item.name, polymorphic_path(item)

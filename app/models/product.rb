@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  searchkick
   validates :name, presence: true, length: { minimum: 5 }
 
   RECENT_NUMBER = 10
