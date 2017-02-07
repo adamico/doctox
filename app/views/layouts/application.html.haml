@@ -1,0 +1,22 @@
+!!!
+%html{lang: 'fr'}
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{'http-equiv': 'X-UA-Compatible', content: 'IE=edge'}
+    %title
+      DocTOX |
+      = yield :page_title
+
+    = csrf_meta_tags
+
+    = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    %header
+      %nav
+        = link_to 'DocTOX', root_path, class: 'brand-logo'
+      = yield :header
+
+    %main
+      = yield
