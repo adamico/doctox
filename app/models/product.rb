@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  searchkick
+  searchkick language: 'french'
   validates :name, presence: true, length: { minimum: 5 }
 
   RECENT_NUMBER = 10
