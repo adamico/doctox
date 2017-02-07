@@ -7,4 +7,8 @@ class Product < ApplicationRecord
   def self.recent(number = RECENT_NUMBER)
     order(:updated_at).limit(number)
   end
+
+  def name_and_class
+    "#{name} (#{model_name.human})"
+  end
 end
