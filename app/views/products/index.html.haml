@@ -14,7 +14,7 @@
       %tbody
         - @products.recent.each do |product|
           %tr
-            %td= product.name
+            %td= link_to product.name, product
             %td= simple_format(product.description)
             %td
               %small= link_to 'Modifier', edit_product_path(product)
