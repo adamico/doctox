@@ -9,9 +9,7 @@ feature 'A user wanting to enlarge his knowledge' do
 
   context 'searches for an existing product' do
     before do
-      visit root_path
-      fill_in 'query', with: product.name
-      click_on 'Rechercher'
+      search_product(product.name)
     end
 
     scenario 'sees the query' do
@@ -25,9 +23,7 @@ feature 'A user wanting to enlarge his knowledge' do
 
   context 'searches for a product which does not exist' do
     before do
-      visit root_path
-      fill_in 'query', with: 'abarfoo'
-      click_on 'Rechercher'
+      search_product('abarfoo')
     end
 
     scenario 'sees a proposal for product creation using the query' do
