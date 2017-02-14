@@ -74,3 +74,5 @@ gem 'thor', '0.19.1' # see https://github.com/rails/rails/issues/27229
 gem 'haml-rails', '~> 0.7.0'
 gem 'searchkick'
 gem 'pry-rails'
+gem 'bulma-rails', '~> 0.3.1'
+gem 'font-awesome-rails'

@@ -49,6 +49,8 @@ GEM
       debug_inspector (>= 0.0.1)
     brakeman (3.4.0)
     builder (3.2.3)
+    bulma-rails (0.3.1)
+      sass (~> 3.2)
     byebug (9.0.6)
     capybara (2.6.2)
       addressable
@@ -95,6 +97,8 @@ GEM
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.17)
+    font-awesome-rails (4.6.2.0)
+      railties (>= 3.2, < 5.1)
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -300,6 +304,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors (~> 2.1.1)
   binding_of_caller (~> 0.7.2)
+  bulma-rails (~> 0.3.1)
   byebug
   capybara
   capybara-webkit
@@ -307,6 +312,7 @@ DEPENDENCIES
   database_cleaner
   email_spec
   factory_girl_rails
+  font-awesome-rails
   guard-brakeman
   guard-rspec (~> 4.6.4)
   guard-rubocop (~> 1.2.0)

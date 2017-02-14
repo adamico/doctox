@@ -3,6 +3,7 @@
   %head
     %meta{charset: 'utf-8'}
     %meta{'http-equiv': 'X-UA-Compatible', content: 'IE=edge'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
     %title
       DocTOX |
       = yield :page_title
@@ -12,14 +13,19 @@
     = stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-  %body
-    %header
-      %nav
-        = link_to 'DocTOX', root_path, class: 'brand-logo'
-      = yield :header
+  %body{class: "layout-#{controller_path.parameterize}-#{action_name}"}
+    .container
+      %nav.nav
+        .nav-left= link_to 'DocTOX', root_path, class: 'nav-item is-brand'
+        .nav-center
+          = link_to fa_icon('search'), '#', class: 'nav-item'
+        .nav-right
+          = link_to fa_icon('sign-in'), '#', class: 'nav-item'
 
+    - if flash.any?
       - flash.each do |name, msg|
-        = content_tag :div, msg, class: name
+        = content_tag :div, class: "notification #{(name)}" do
+          %button.delete
+          = msg
 
-    %main
-      = yield
+    = yield
