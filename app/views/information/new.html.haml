@@ -1,19 +1,17 @@
-%h1
-  Nouvelle information pour le produit
-  %em= @product.name
+%section.section
+  .container
+    %nav.level
+      .level-left
+        .level-item
+          %p.subtitle.is-5= link_to 'Produits', products_path
+        .level-item
+          &gt;
+        .level-item
+          = link_to @product.name, @product
+        .level-item
+          &gt;
+          Nouvelle information
 
-= form_for [@product, @information], role: 'form' do |f|
-  - if @information.errors.any?
-    #error_explanation
-      %h3
-        = pluralize(information.errors.count, 'erreur', plural: 'erreurs')
-        empêche#{information.errors.many? ? 'nt' : ''}
-        la sauvegarde :
-        %ul
-          - information.errors.full_messages.each do |msg|
-            %li= msg
-  %p= f.text_field :name, placeholder: t('attributes.name')
-  %p= f.text_area :contents, placeholder: t('attributes.contents'), rows: 4, cols: 80
-  %p= f.submit 'Enregistrer'
-
-%p= link_to "Retour au produit #{@product.name}", @product
+%section.section
+  .container
+    = render 'form', product: @product, information: @information

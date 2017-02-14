@@ -1,29 +1,29 @@
-%h1 Produits
+%section.hero.is-primary
+  .hero-body
+    .container
+      %h1.title Produits
+      -#%h2.subtitle Les #{Product::RECENT_NUMBER} produits récemment mis à jour
 
-- if @products.any?
-  %section
-    %h2 Les #{Product::RECENT_NUMBER} produits récemment mis à jour
+  -#.hero-foot
+    %nav.tabs
+      .container
+        %ul
+          %li.is-active= link_to 'Récents', '#'
+          %li= link_to 'Populaires', '#'
 
-    %table
-      %thead
-        %tr
-          %th Nom
-          %th Description
-          %th
-            %small Actions
-      %tbody
+%section.section
+  .container
+    - if @products.any?
+      .columns
         - @products.recent.each do |product|
-          %tr
-            %td= link_to product.name, product
-            %td= simple_format(product.description)
-            %td
-              %small= link_to 'Modifier', edit_product_path(product)
+          .column
+            = render 'product_short', product: product
+    - else
+      %p
+        %em ♪ Non, rien de rien... ♪
 
-  -#%section
-    %h2 Les produits le plus fréquemment recherchés
-
-- else
-  %em ♪ Non, rien de rien... ♪
-
-%h2 Créer un nouveau produit
-= render 'form', product: Product.new(name: params[:name])
+%section.section
+  .container
+    .heading
+      %h2.title Créer un nouveau produit
+    = render 'form', product: Product.new(name: params[:name])

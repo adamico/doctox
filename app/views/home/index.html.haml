@@ -1,8 +1,20 @@
-%h1 Bienvenue sur DocTOX
-%h2 Un site participatif de documentation en toxicologie.
+%section.hero.is-medium.is-primary.is-bold
+  .hero-body
+    .container
+      %p.title DocTOX
+      %p.subtitle Un site participatif de documentation en toxicologie.
 
-= form_tag search_path, method: :get, remote: true, role: 'search' do
-  = search_field_tag :query, {}, { autofocus: true, required: true, value: params[:query] || nil, placeholder: 'rechercher un produit, un symptôme, un contexte…', style: 'width: 400px;' }
-  = submit_tag 'Rechercher'
+%section.hero.is-medium
+  .hero-body
+    .container
+      .columns
+        .column
+        .column.is-two-thirds
+          = form_tag search_path, method: :get, remote: true, role: 'search' do
+            %p.control.has-addons
+              = text_field_tag :query, {},
+                { class: 'input is-expanded is-medium', autofocus: true, required: true, value: params[:query] || nil, placeholder: 'rechercher un produit, un symptôme, un contexte…' }
+              = submit_tag 'Rechercher', class: 'button is-medium is-primary is-outlined'
 
-#js-search-results
+        .column
+      #js-search-results

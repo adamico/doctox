@@ -1,5 +1,18 @@
-%h1
-  Modification
-  %em= @product.name
+%section.section
+  .container
+    %nav.level
+      .level-left
+        .level-item
+          %p.subtitle.is-5= link_to 'Produits', products_path
+        .level-item
+          &gt;
+        .level-item
+          = link_to @product.name, @product
+        .level-item
+          &gt;
+        .level-item
+          Modification
 
-= render 'form', product: @product
+%section.section
+  .container
+    = render 'form', product: @product

@@ -1,0 +1,10 @@
+.card
+  %header.card-header
+    %p.card-header-title= product.name
+  .card-content
+    .content
+      = product.description
+  %footer.card-footer
+    = link_to 'Voir plus', product_path(product), class: 'card-footer-item'
+    = link_to 'Modifier', edit_product_path(product), class: 'card-footer-item'
+    = link_to 'Rajouter une information', new_product_information_path(product), class: 'card-footer-item'

@@ -1,4 +1,4 @@
-%h3
+%h4.title.is-4
   Résultats de la recherche pour le terme :
   %em= @query.to_s
 
@@ -9,5 +9,7 @@
     Pour me faire pardonner, je vous propose de
     = link_to "Créer : #{@query}", new_product_path(name: @query)
 - else
-  - @search.each do |item|
-    = link_to item.name_and_class, polymorphic_path(item)
+  .columns
+    - @search.each do |item|
+      .column
+        = render 'products/product_short', product: item

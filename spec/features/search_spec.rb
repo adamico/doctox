@@ -16,8 +16,8 @@ feature 'A user wanting to enlarge his knowledge' do
       expect(page).to have_content("Résultats de la recherche pour le terme : #{product.name}")
     end
 
-    scenario 'sees the link to the product' do
-      expect(page).to have_link(product.name)
+    scenario 'sees the link to the product full card' do
+      expect(page).to have_link('Voir plus')
     end
   end
 

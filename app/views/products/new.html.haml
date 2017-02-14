@@ -1,3 +1,14 @@
-%h1 Créer un nouveau produit
+%section.section
+  .container
+    %nav.level
+      .level-left
+        .level-item
+          %p.subtitle.is-5= link_to 'Produits', products_path
+        .level-item
+          &gt;
+        .level-item
+          Création
 
-= render 'form', product: @product
+%section.section
+  .container
+    = render 'form', product: @product
