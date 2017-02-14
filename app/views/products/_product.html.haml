@@ -3,8 +3,8 @@
     %p.card-header-title= product.name
   .card-content
     .content
-      = product.description
-    - unless product.information.none?
+      %em= product.description
+    - if product.information.any?
       .columns
       - product.information.each do |information|
         .column
@@ -15,7 +15,9 @@
                 = link_to 'Modifier cette information', edit_product_information_path(product, information)
             .message-body
               %p= simple_format information.contents
-              %br
+    - else
+      Aucune information disponible pour ce produit.
+
   %footer.card-footer
     = link_to 'Modifier', edit_product_path(product), class: 'card-footer-item'
     = link_to 'Rajouter une information', new_product_information_path(product), class: 'card-footer-item'

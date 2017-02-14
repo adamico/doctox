@@ -3,7 +3,15 @@
     %p.card-header-title= product.name
   .card-content
     .content
-      = product.description
+      %em= product.description
+      - if product.information.any?
+        %strong= pluralize(product.information.count, 'informations')
+        disponibles
+        %ul
+          - product.information.each do |information|
+            %li= information.name
+      - else
+        Aucune information disponible pour ce produit.
   %footer.card-footer
     = link_to 'Voir plus', product_path(product), class: 'card-footer-item'
     = link_to 'Modifier', edit_product_path(product), class: 'card-footer-item'
