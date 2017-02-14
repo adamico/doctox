@@ -1,0 +1,19 @@
+%h1
+  Modification information pour le produit
+  %em= @product.name
+
+= form_for [@product, @information], role: 'form' do |f|
+  - if @information.errors.any?
+    #error_explanation
+      %h3
+        = pluralize(information.errors.count, 'erreur', plural: 'erreurs')
+        empêche#{information.errors.many? ? 'nt' : ''}
+        la sauvegarde :
+        %ul
+          - information.errors.full_messages.each do |msg|
+            %li= msg
+  %p= f.text_field :name, placeholder: t('attributes.name')
+  %p= f.text_area :contents, placeholder: t('attributes.contents'), rows: 4, cols: 80
+  %p= f.submit 'Enregistrer'
+
+%p= link_to "Retour au produit #{@product.name}", @product

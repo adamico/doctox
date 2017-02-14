@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 feature 'A user wanting to contribute to the knowledge about a product' do
+  let!(:product) { create(:product, name: 'abarfoo') }
+
   scenario 'successfully adds a new piece of information' do
-    create_product('abarfoo')
+    visit product_path(product)
 
     click_on 'Rajouter une information'
     fill_in 'information_name', with: 'Dose Toxique'
@@ -20,5 +22,14 @@ feature 'A user wanting to contribute to the knowledge about a product' do
     # click_on 'Ecrire'
     # sleep 2
     # expect(page).to have_content(contents)
+  end
+
+  scenario 'updating existing information' do
+    create(:information, product: product)
+    visit product_path(product)
+    click_on 'Modifier cette information'
+    fill_in 'information_name', with: 'Dose létale'
+    click_on 'Enregistrer'
+    expect(page).to have_content('Information Dose létale pour le produit abarfoo mise à jour avec succès')
   end
 end
