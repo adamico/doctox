@@ -2,9 +2,9 @@ fr:
   models: &models
     product: Produit
   attributes:
-    name: libéllé
+    contents: contenu
     description: description
+    name: libéllé
   activerecord:
     models:
       <<: *models
-
