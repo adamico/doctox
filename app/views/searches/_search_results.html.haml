@@ -2,7 +2,8 @@
   Résultats de la recherche pour le terme :
   %em= @query.to_s
 
-- if @search.empty?
+- if @products.empty?
+  %h5.title.is-5 Produits :
   %p
     Désolé, je n'ai rien trouvé.
     %br
@@ -10,6 +11,6 @@
     = link_to "Créer : #{@query}", new_product_path(name: @query)
 - else
   .columns
-    - @search.each do |item|
+    - @products.each do |item|
       .column
         = render 'products/product_short', product: item

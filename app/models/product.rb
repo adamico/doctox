@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  acts_as_taggable
+  scope :search_import, -> { includes(:tags) }
+
   searchkick language: 'french'
   validates :name, presence: true, length: { minimum: 5 }
 
@@ -12,5 +15,9 @@ class Product < ApplicationRecord
 
   def name_and_class
     "#{name} (#{model_name.human})"
+  end
+
+  def search_data
+    { name_tagged: "#{name} #{tags.map(&:name).join(' ')}" }
   end
 end

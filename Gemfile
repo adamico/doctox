@@ -71,8 +71,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'thor', '0.19.1' # see https://github.com/rails/rails/issues/27229
 
-gem 'haml-rails', '~> 0.7.0'
-gem 'searchkick'
-gem 'pry-rails'
+gem 'acts-as-taggable-on', '~> 4.0'
 gem 'bulma-rails', '~> 0.3.1'
 gem 'font-awesome-rails'
+gem 'haml-rails', '~> 0.7.0'
+gem 'pry-rails'
+gem 'searchkick'

@@ -1,6 +1,8 @@
 class SearchesController < ApplicationController
   def index
     @query = params[:query]
-    @search = Searchkick.search @query, index_name: [Product]
+    products = Product.search @query, fields: [:name_tagged], execute: false
+    Searchkick.multi_search [products]
+    @products = products
   end
 end

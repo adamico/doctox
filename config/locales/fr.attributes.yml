@@ -5,6 +5,7 @@ fr:
     contents: contenu
     description: description
     name: libéllé
+    tags: synonymes
   activerecord:
     models:
       <<: *models

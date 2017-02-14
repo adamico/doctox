@@ -1,6 +1,8 @@
 .card
   %header.card-header
-    %p.card-header-title= product.name
+    %p.card-header-title
+      = product.name
+      (#{product.tag_list})
   .card-content
     .content
       %em= product.description
